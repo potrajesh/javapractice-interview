@@ -9,7 +9,7 @@ public class CountOccurenceEachChar {
 
 
     public static void main(String[] args) {
-        String name = "Java";
+        String name = "Giri is a Java developer ";
 
         // count occurence each character given string
         Map<Character,Long> map =name.chars().mapToObj(c-> (char)c)
@@ -32,5 +32,11 @@ public class CountOccurenceEachChar {
                         Collectors.counting())).entrySet().stream()
                 .filter(entry->entry.getValue()==1).map(Map.Entry::getKey).collect(Collectors.toList());
         System.out.println("find the unique char"+character);// [p, r, D, J, l, o]
+
+        // find the vowels given string
+        List<Character> vowels =name.chars().mapToObj(c-> (char)c).filter(c->"aeiouAEIOU"
+                .indexOf(c)!=-1).collect(Collectors.toList());
+        vowels.forEach(System.out::print);
+        //iiiaaaeeoe
     }
 }
