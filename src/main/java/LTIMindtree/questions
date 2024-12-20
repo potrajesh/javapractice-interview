@@ -1,0 +1,26 @@
+ // 1. Increase salary by 10% if salary < 50k, age > 25, name starts with 'S'
+
+        employees.stream()
+                .filter(emp -> emp.getSalary() < 50000 && emp.getAge() > 25 && emp.getName().startsWith("S"))
+                .forEach(emp -> emp.setSalary(emp.getSalary() * 1.10));
+
+        // Print updated salaries
+        System.out.println("Updated Employee List:");
+        employees.forEach(System.out::println);
+
+        // 2. Count the number of female employees with salary > 35k
+        long femaleCount = employees.stream()
+                .filter(emp -> emp.getGender().equalsIgnoreCase("Female") && emp.getSalary() > 35000)
+                .count();
+        System.out.println("Number of female employees with salary > 35k: " + femaleCount);
+
+        // 3. Find the highest-paid employee
+        Employee highestPaidEmployee = employees.stream()
+                .max(Comparator.comparingDouble(Employee::getSalary))
+                .orElse(null);
+
+        if (highestPaidEmployee != null) {
+            System.out.println("Highest paid employee: " + highestPaidEmployee.getName() +
+                               ", Salary: " + highestPaidEmployee.getSalary());
+        }
+    }

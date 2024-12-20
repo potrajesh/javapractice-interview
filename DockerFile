@@ -1,0 +1,4 @@
+FROM openjdk:17-jdk-slim
+MAINTAINER eazybytes.com
+COPY target/javapractice-interview-1.0-SNAPSHOT.jar
+ENTRYPOINT["java","-jar","javapractice-interview-1.0-SNAPSHOT.jar"]

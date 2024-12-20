@@ -11,6 +11,17 @@ public class Employee {
     private double salary;
     private String dept;
 
+    public Employee() {
+    }
+
+    public Employee(int id, int age, String name, double salary, String dept) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
+        this.salary = salary;
+        this.dept = dept;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
