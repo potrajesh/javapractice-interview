@@ -10,7 +10,7 @@ public class FindDuplicates {
         int[] nums = {1, 2, 3, 2, 1, 4, 5, 4};
         findDuplicates(nums);
     }
-
+   //iam in test
     private static HashMap<Integer, Integer>  findDuplicates(int[] nums) {
         HashMap<Integer, Integer> mapData = new HashMap<>();
         for (int n : nums) {
